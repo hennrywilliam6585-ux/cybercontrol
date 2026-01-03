@@ -1,7 +1,6 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import ClientApp from './ClientApp';
 
 const rootElement = document.getElementById('root');
@@ -10,14 +9,8 @@ if (!rootElement) {
 }
 
 const root = ReactDOM.createRoot(rootElement);
-
-// Routing Logic:
-// Check if the URL contains "?mode=client"
-const params = new URLSearchParams(window.location.search);
-const isClientMode = params.get('mode') === 'client';
-
 root.render(
   <React.StrictMode>
-    {isClientMode ? <ClientApp /> : <App />}
+    <ClientApp />
   </React.StrictMode>
 );
